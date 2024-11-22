@@ -7,8 +7,8 @@ class DbContext {
   // Values = mongoose.model('Value', ValueSchema);
   Account = mongoose.model('Account', AccountSchema);
   Bug = mongoose.model('Bug', BugSchema)
+  Note = mongoose.modell('Note', NoteSchema)
   // TrackedBug = mongoose.model('TrackedBug', TrackedBugSchema)
-  // Note = mongoose.modell('Note', NoteSchema)
 }
 
 export const dbContext = new DbContext()
