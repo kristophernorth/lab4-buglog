@@ -1,15 +1,17 @@
 import { dbContext } from "../db/DbContext"
 
 class BugsService {
-  createBug(bugData) {
-    const bugs = dbContext.Bug.create(bugData)
+  async createBug(bugData) {
+    const bugs = await dbContext.Bug.create(bugData)
+    await bugs.populate('creator')
     return bugs
   }
 
   async getBugs() {
-    const bugs = dbContext.Bug.find()
+    const bugs = await dbContext.Bug.find()
     return bugs
   }
+
 }
 
 export const bugsService = new BugsService()
